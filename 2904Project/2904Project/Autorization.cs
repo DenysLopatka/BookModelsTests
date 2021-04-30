@@ -12,6 +12,9 @@ namespace _2904Project
     class Autorization : Registration
     {
         //[SetUp]
-        //Setup
+        public void AutorizationTry()
+        {
+            
+        }
     }
 }

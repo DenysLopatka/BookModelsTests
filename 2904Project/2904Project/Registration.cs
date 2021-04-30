@@ -11,7 +11,9 @@ namespace _2904Project
 {
     public class Registration
     {
-        private IWebDriver _webDriver;
+        internal IWebDriver _webDriver;
+        internal string _validMail = "";
+
         [SetUp]
         public void Setup()
         {
@@ -20,6 +22,10 @@ namespace _2904Project
 
             _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
             _webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+
+            DateTime dataTime = DateTime.Now;
+            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString();
+            _validMail = $"{mailAdd}b@gmail.com";
         }
 
         //[TearDown]
@@ -30,10 +36,7 @@ namespace _2904Project
 
         [Test]
         public void FirstRegistrationPage()
-        {
-            DateTime dataTime = DateTime.Now;
-            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString(); 
-
+        {           
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join");
 
             var nameField = _webDriver.FindElement(By.CssSelector("[name = 'first_name']"));
@@ -43,7 +46,7 @@ namespace _2904Project
             lastNameField.SendKeys("Test");
 
             var emailField = _webDriver.FindElement(By.CssSelector("[name = 'email']"));
-            emailField.SendKeys($"{mailAdd}b@laraskey.com");
+            emailField.SendKeys(_validMail);
 
             var password = _webDriver.FindElement(By.CssSelector("[name = 'password']"));
             password.SendKeys("Test123#");
@@ -66,9 +69,9 @@ namespace _2904Project
         [Test]
         public void SecondRegistrationPage()
         {
-            DateTime dataTime = DateTime.Now;
-            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString();
-
+            
+            
+            
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join");
 
             var nameField = _webDriver.FindElement(By.CssSelector("[name = 'first_name']"));
@@ -78,7 +81,7 @@ namespace _2904Project
             lastNameField.SendKeys("Test");
 
             var emailField = _webDriver.FindElement(By.CssSelector("[name = 'email']"));
-            emailField.SendKeys($"{mailAdd}b@laraskey.com");
+            emailField.SendKeys(_validMail + "s");
 
             var password = _webDriver.FindElement(By.CssSelector("[name = 'password']"));
             password.SendKeys("Test123#");
