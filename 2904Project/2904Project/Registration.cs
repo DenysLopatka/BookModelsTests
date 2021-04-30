@@ -11,8 +11,8 @@ namespace _2904Project
 {
     public class Registration
     {
-        internal IWebDriver _webDriver;
-        internal string _validMail = "";
+        private IWebDriver _webDriver;
+        public string _validMail = "";
 
         [SetUp]
         public void Setup()
@@ -21,11 +21,7 @@ namespace _2904Project
             _webDriver = new ChromeDriver();
 
             _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
-            _webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
-
-            DateTime dataTime = DateTime.Now;
-            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString();
-            _validMail = $"{mailAdd}b@gmail.com";
+            _webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);            
         }
 
         //[TearDown]
@@ -36,7 +32,11 @@ namespace _2904Project
 
         [Test]
         public void FirstRegistrationPage()
-        {           
+        {
+            DateTime dataTime = DateTime.Now;
+            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString();
+            _validMail = $"{mailAdd}b@gmail.com";
+
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join");
 
             var nameField = _webDriver.FindElement(By.CssSelector("[name = 'first_name']"));
@@ -69,9 +69,10 @@ namespace _2904Project
         [Test]
         public void SecondRegistrationPage()
         {
-            
-            
-            
+            DateTime dataTime = DateTime.Now;
+            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString();
+            _validMail = $"{mailAdd}b@gmail.com";
+
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join");
 
             var nameField = _webDriver.FindElement(By.CssSelector("[name = 'first_name']"));

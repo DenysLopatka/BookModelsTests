@@ -6,15 +6,45 @@ using System;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
+using _2904Project;
 
 namespace _2904Project
 {
-    class Autorization : Registration
+    class Autorization
     {
-        //[SetUp]
+        private IWebDriver _webDriver;
+        
+
+        [SetUp]
+        public void Setup()
+        {
+            new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
+            _webDriver = new ChromeDriver();
+
+            _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
+            _webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+        }
+
+        //[TearDown]
+        //public void TearDown()
+        //{
+        //    new Registration().TearDown();
+        //}
+
+        [Test]
         public void AutorizationTry()
         {
-            
+            _webDriver.Navigate().GoToUrl("https://newbookmodels.com/auth/signin");
+
+            _webDriver.FindElement(By.CssSelector("[name = 'email']")).SendKeys("leviss122@gmail.com");
+            _webDriver.FindElement(By.CssSelector("[name = 'password']")).SendKeys("Nicenice123@");
+
+            _webDriver.FindElement(By.CssSelector("[type= 'submit']")).Click();
+
+            System.Threading.Thread.Sleep(3000);
+
+            var url = _webDriver.Url;
+            Assert.AreEqual("https://newbookmodels.com/explore", url);
         }
-    }
+    }           
 }
