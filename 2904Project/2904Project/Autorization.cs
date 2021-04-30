@@ -36,7 +36,7 @@ namespace _2904Project
         {
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/auth/signin");
 
-            _webDriver.FindElement(By.CssSelector("[name = 'email']")).SendKeys("leviss122@gmail.com");
+            _webDriver.FindElement(By.CssSelector("[name = 'email']")).SendKeys("John.Model@gmail.com");
             _webDriver.FindElement(By.CssSelector("[name = 'password']")).SendKeys("Nicenice123@");
 
             _webDriver.FindElement(By.CssSelector("[type= 'submit']")).Click();
