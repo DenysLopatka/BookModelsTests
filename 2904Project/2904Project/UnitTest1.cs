@@ -29,11 +29,12 @@ namespace _2904Project
         }
 
         [Test]
-        public void Test1()
+        public void FirstRegistrationPage()
         {
             DateTime dataTime = DateTime.Now;
-            
-            _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join");                   
+            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString(); 
+
+            _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join");
 
             var nameField = _webDriver.FindElement(By.CssSelector("[name = 'first_name']"));
             nameField.SendKeys("Test");
@@ -42,7 +43,7 @@ namespace _2904Project
             lastNameField.SendKeys("Test");
 
             var emailField = _webDriver.FindElement(By.CssSelector("[name = 'email']"));
-            emailField.SendKeys($"{dataTime.Millisecond.ToString()}bihaka6821@laraskey.com");
+            emailField.SendKeys($"{mailAdd}b@laraskey.com");
 
             var password = _webDriver.FindElement(By.CssSelector("[name = 'password']"));
             password.SendKeys("Test123#");
@@ -60,6 +61,12 @@ namespace _2904Project
             var url = _webDriver.Url;            
 
             Assert.AreEqual("https://newbookmodels.com/join/company", url);            
+        }
+
+        [Test]
+        public void SecondRegistrationPage()
+        {
+
         }
     }
 }
