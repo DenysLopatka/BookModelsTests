@@ -33,14 +33,14 @@ namespace _2904Project
         [Test]
         public void FirstRegistrationPage()
         {
-            var registrationPage = new BaseClassTests(_webDriver);
+            var registrationPage = new RegistrationPage(_webDriver);
             registrationPage.OpenPage()
-            .SetFirstName()
-            .SetSecondName()
+            .SetFirstName("Den")
+            .SetSecondName("Dende")
             .SetEmail()
-            .SetPassword()
-            .SetConfirmPassword()
-            .SetPhomeNumber()
+            .SetPassword("Nicenice123#")
+            .SetConfirmPassword("Nicenice123#")
+            .SetPhomeNumber("111.111.1111")
             .ClickSubmit();
 
             var url = _webDriver.Url;
@@ -51,31 +51,15 @@ namespace _2904Project
         [Test]
         public void SecondRegistrationPage()
         {
-            DateTime dataTime = DateTime.Now;
-            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString();
-            _validMail = $"{mailAdd}b@gmail.com";
-
-            _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join");
-
-            var nameField = _webDriver.FindElement(By.CssSelector("[name = 'first_name']"));
-            nameField.SendKeys("Test");
-
-            var lastNameField = _webDriver.FindElement(By.CssSelector("[name = 'last_name']"));
-            lastNameField.SendKeys("Test");
-
-            var emailField = _webDriver.FindElement(By.CssSelector("[name = 'email']"));
-            emailField.SendKeys(_validMail + "s");
-
-            var password = _webDriver.FindElement(By.CssSelector("[name = 'password']"));
-            password.SendKeys("Test123#");
-
-            var confirmPassword = _webDriver.FindElement(By.CssSelector("[name = 'password_confirm']"));
-            confirmPassword.SendKeys("Test123#");
-
-            var phoneNumber = _webDriver.FindElement(By.CssSelector("[name = 'phone_number']"));
-            phoneNumber.SendKeys("123.123.1221");
-
-            _webDriver.FindElement(By.CssSelector("[type = 'submit']")).Click();
+            var registrationPage = new RegistrationPage(_webDriver);
+            registrationPage.OpenPage()
+            .SetFirstName("Den")
+            .SetSecondName("Dende")
+            .SetEmail()
+            .SetPassword("Nicenice123#")
+            .SetConfirmPassword("Nicenice123#")
+            .SetPhomeNumber("111.111.1111")
+            .ClickSubmit();
 
             System.Threading.Thread.Sleep(3000);                      
 
@@ -91,6 +75,7 @@ namespace _2904Project
 
             _webDriver.FindElement(By.CssSelector("[name = 'industry']")).Click();
             System.Threading.Thread.Sleep(1500);
+
             _webDriver.FindElements(By.CssSelector("[role = 'option']"))[2].Click();
 
             //IJavaScriptExecutor js = (IJavaScriptExecutor)_webDriver;
