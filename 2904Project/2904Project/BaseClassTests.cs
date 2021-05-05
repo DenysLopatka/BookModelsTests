@@ -20,6 +20,15 @@ namespace _2904Project
         By _phoneNumberLocator = By.CssSelector("[name = 'phone_number']");
         By _submitButtonSelector = By.CssSelector("[type = 'submit']");
 
+
+        public string MailGenerator()
+        {
+            DateTime dataTime = DateTime.Now;
+            var mailAdd = dataTime.Year.ToString() + dataTime.Month.ToString() + dataTime.Day.ToString() + dataTime.Hour.ToString() + dataTime.Millisecond.ToString();
+            string _validMail = $"{mailAdd}b@gmail.com";
+            return _validMail;
+        }
+        
         public BaseClassTests(IWebDriver driver)
         {
             this._webDriver = driver;            
@@ -36,6 +45,42 @@ namespace _2904Project
             _webDriver.FindElement(_firstNameLocator).SendKeys("Den");
             return this;
         }
-        
+
+        public BaseClassTests SetSecondName()
+        {
+            _webDriver.FindElement(_secondNameLocator).SendKeys("DenDen");
+            return this;
+        }
+
+        public BaseClassTests SetEmail()
+        {
+            _webDriver.FindElement(_emailLocator).SendKeys(MailGenerator());
+            return this;
+        }
+
+        public BaseClassTests SetPassword()
+        {
+            _webDriver.FindElement(_passwordLocator).SendKeys("Test123#");
+            return this;
+        }
+
+        public BaseClassTests SetConfirmPassword()
+        {
+            _webDriver.FindElement(_confirmPasswordLocator).SendKeys("Test123#");
+            return this;
+        }
+
+        public BaseClassTests SetPhomeNumber()
+        {
+            _webDriver.FindElement(_phoneNumberLocator).SendKeys("123.123.1221");
+            return this;
+        }
+
+        public BaseClassTests ClickSubmit()
+        {
+            _webDriver.FindElement(By.CssSelector("[type = 'submit']")).Click();
+            return this;
+        }
+
     }
 }
