@@ -94,7 +94,7 @@ namespace _2904Project
             var phoneNumber = _webDriver.FindElement(By.CssSelector("[name = 'phone_number']"));
             phoneNumber.SendKeys("123.123.1221");
 
-            _webDriver.FindElement(By.CssSelector("[type= 'submit']")).Click();
+            _webDriver.FindElement(By.CssSelector("[type = 'submit']")).Click();
 
             System.Threading.Thread.Sleep(3000);                      
 
