@@ -10,11 +10,8 @@ using _2904Project;
 
 namespace _2904Project
 {
-    class Autorization
-    {
-        private IWebDriver _webDriver;
-        
-
+    class Autorization : BaseClassTests
+    {              
         [SetUp]
         public void Setup()
         {
