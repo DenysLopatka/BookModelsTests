@@ -1,36 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\QA_Den\\PROJECTS\\2904Project\\BookModelsTests\\2904Project\\2904Project\\2904Project.csproj": {}
+    "C:\\Users\\MrZip\\Desktop\\BOOK_MODEL\\BookModelsTests\\2904Project\\2904Project\\2904Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\QA_Den\\PROJECTS\\2904Project\\BookModelsTests\\2904Project\\2904Project\\2904Project.csproj": {
+    "C:\\Users\\MrZip\\Desktop\\BOOK_MODEL\\BookModelsTests\\2904Project\\2904Project\\2904Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\QA_Den\\PROJECTS\\2904Project\\BookModelsTests\\2904Project\\2904Project\\2904Project.csproj",
+        "projectUniqueName": "C:\\Users\\MrZip\\Desktop\\BOOK_MODEL\\BookModelsTests\\2904Project\\2904Project\\2904Project.csproj",
         "projectName": "2904Project",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\QA_Den\\PROJECTS\\2904Project\\BookModelsTests\\2904Project\\2904Project\\2904Project.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\QA_Den\\PROJECTS\\2904Project\\BookModelsTests\\2904Project\\2904Project\\obj\\",
+        "projectPath": "C:\\Users\\MrZip\\Desktop\\BOOK_MODEL\\BookModelsTests\\2904Project\\2904Project\\2904Project.csproj",
+        "packagesPath": "C:\\Users\\MrZip\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MrZip\\Desktop\\BOOK_MODEL\\BookModelsTests\\2904Project\\2904Project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\MrZip\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -41,8 +35,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -80,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
