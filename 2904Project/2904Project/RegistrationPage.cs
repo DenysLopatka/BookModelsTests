@@ -23,6 +23,7 @@ namespace _2904Project
         private static readonly By _companyNameLocator = By.CssSelector("[name = 'company_name']");
         private static readonly By _companySiteLocator = By.CssSelector("[name = 'company_website']");
         private static readonly By _locationFieldLocator = By.CssSelector("[name = 'location']");
+        private static readonly By _locationClickLocation = By.CssSelector("[class = 'pac-item-query']");
         private static readonly By _industryLocator = By.CssSelector("[name = 'industry']");
         private static readonly By _industryOptionLocator = By.CssSelector("[role = 'option']");
         private static readonly By _secondPageSubmitButton = By.CssSelector("[type = 'submit']");
@@ -89,9 +90,36 @@ namespace _2904Project
 
         public RegistrationPage SetCompanyName(string companyName)
         {
-            _webDriver.FindElement(_companySiteLocator).SendKeys(companyName);
+            _webDriver.FindElement(_companyNameLocator).SendKeys(companyName);
             return this;
         }
 
+        public RegistrationPage SetCompanySite(string companySite)
+        {
+            _webDriver.FindElement(_companySiteLocator).SendKeys(companySite);
+            return this;
+        }
+
+        public RegistrationPage SetLocationField(string locationField)
+        {
+            _webDriver.FindElement(_locationFieldLocator).SendKeys(locationField);
+            _webDriver.FindElement(_locationClickLocation).Click();
+            return this;
+        }
+
+        public RegistrationPage SetIndustryLocator()
+        {
+            _webDriver.FindElement(_industryLocator).Click();
+            System.Threading.Thread.Sleep(1500);
+            _webDriver.FindElement(_industryOptionLocator).Click();
+            return this;
+        }
+
+        public RegistrationPage Submit()
+        {
+            System.Threading.Thread.Sleep(1000);
+            _webDriver.FindElement(_secondPageSubmitButton).Click();  
+            return this;
+        }
     }
 }
